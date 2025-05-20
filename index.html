@@ -3,7 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Simple Slideshow</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
+        /* Navbar styles */
+        .navbar {
+            width: 100%;
+            background: #222;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            margin: 0 0 30px 0;
+        }
+        .navbar a {
+            color: #fff;
+            padding: 16px 32px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: background 0.3s;
+        }
+        .navbar a:hover {
+            background: #444;
+        }
+        /* Slideshow styles (override for demo) */
         .slideshow-container {
             max-width: 600px;
             position: relative;
@@ -41,10 +64,18 @@
     </style>
 </head>
 <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="home.html">Home</a>
+        <a href="achievements.html">Achievements</a>
+        <a href="cv.html">CV</a>
+    </nav>
+
+    <!-- Slideshow -->
     <div class="slideshow-container">
-        <img class="slide active" src="https://via.placeholder.com/600x300?text=Slide+1" alt="Slide 1">
-        <img class="slide" src="https://via.placeholder.com/600x300?text=Slide+2" alt="Slide 2">
-        <img class="slide" src="https://via.placeholder.com/600x300?text=Slide+3" alt="Slide 3">
+        <img class="slide active" src="images/1.jpg" alt="First Project">
+        <img class="slide" src="images/2.jpg" alt="Second Project">
+        <img class="slide" src="images/.jpg" alt="Third Project">
 
         <a class="prev">&#10094;</a>
         <a class="next">&#10095;</a>
@@ -70,7 +101,7 @@
         prev.addEventListener('click', () => changeSlide(-1));
         next.addEventListener('click', () => changeSlide(1));
 
-        // Optional: Auto slide
+        // Auto slide
         setInterval(() => changeSlide(1), 4000);
     </script>
 </body>
